@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogShare - Share Your Stories</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">BlogShare</div>
+            <div class="user-menu">
+                <span id="username">Guest</span>
+                <button id="loginBtn">Login</button>
+                <button id="registerBtn">Register</button>
+                <button id="logoutBtn" style="display: none;">Logout</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="left-sidebar">
+                <div class="profile-section">
+                    <div class="profile-pic" id="profilePic">
+                        <img src="/api/placeholder/100/100" alt="Profile">
+                    </div>
+                    <div class="user-info">
+                        <h3 id="profileUsername">Guest</h3>
+                        <p><span id="friendCount">0</span> friends</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#feed" class="active">Feed</a></li>
+                        <li><a href="#myBlogs">My Blogs</a></li>
+                        <li><a href="#friends">Friends</a></li>
+                        <li><a href="#discover">Discover</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="content">
+                <div id="loginForm" class="auth-form">
+                    <h2>Login</h2>
+                    <form>
+                        <input type="text" placeholder="Username" id="loginUsername">
+                        <input type="password" placeholder="Password" id="loginPassword">
+                        <button type="submit">Login</button>
+                    </form>
+                    <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+                </div>
+
+                <div id="registerForm" class="auth-form" style="display: none;">
+                    <h2>Create Account</h2>
+                    <form>
+                        <input type="text" placeholder="Username" id="regUsername">
+                        <input type="email" placeholder="Email" id="regEmail">
+                        <input type="password" placeholder="Password" id="regPassword">
+                        <input type="password" placeholder="Confirm Password" id="regConfirmPassword">
+                        <button type="submit">Register</button>
+                    </form>
+                    <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                </div>
+
+                <div id="feedSection">
+                    <div class="compose-blog">
+                        <h2>Share a New Blog</h2>
+                        <form id="blogForm">
+                            <input type="text" id="blogTitle" placeholder="Blog Title">
+                            <textarea id="blogContent" placeholder="What's on your mind?"></textarea>
+                            <button type="submit">Post</button>
+                        </form>
+                    </div>
+
+                    <div class="blogs-container" id="blogsContainer">
+                        <!-- Blog posts will be added here dynamically -->
+                    </div>
+                </div>
+
+                <div id="myBlogsSection" style="display: none;">
+                    <h2>My Blogs</h2>
+                    <div class="blogs-container" id="myBlogsContainer">
+                        <!-- User's blog posts will be added here dynamically -->
+                    </div>
+                </div>
+
+                <div id="friendsSection" style="display: none;">
+                    <h2>My Friends</h2>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search for friends" id="friendSearch">
+                        <button>Search</button>
+                    </div>
+                    <div class="friends-container" id="friendsContainer">
+                        <!-- Friends will be added here dynamically -->
+                    </div>
+                </div>
+
+                <div id="discoverSection" style="display: none;">
+                    <h2>Discover New Writers</h2>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search for users" id="userSearch">
+                        <button>Search</button>
+                    </div>
+                    <div class="users-container" id="usersContainer">
+                        <!-- Users will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-sidebar">
+                <div class="trending-section">
+                    <h3>Trending Topics</h3>
+                    <ul>
+                        <li><a href="#">#Technology</a></li>
+                        <li><a href="#">#Travel</a></li>
+                        <li><a href="#">#Food</a></li>
+                        <li><a href="#">#Fashion</a></li>
+                        <li><a href="#">#Health</a></li>
+                    </ul>
+                </div>
+                <div class="friend-suggestions">
+                    <h3>Friend Suggestions</h3>
+                    <div id="friendSuggestions">
+                        <!-- Friend suggestions will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 BlogShare - Connect Through Stories</p>
+        </footer>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
